@@ -1,0 +1,130 @@
+name: Build and Push Docker Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to tag (e.g. v1.0.1). Leave empty to auto-increment patch."
+        required: false
+        type: string
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build-push:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Required to see tags
+
+      - name: Determine Strategy
+        id: strategy
+        shell: bash
+        run: |
+          # Defaults
+          DO_PUSH="false"
+          DO_GIT_TAG="false"
+          IMAGE_TAG=""
+
+          EVENT="${{ github.event_name }}"
+          REF="${{ github.ref_name }}"
+
+          echo "Event: $EVENT, Ref: $REF"
+
+          if [ "$EVENT" == "pull_request" ]; then
+             echo "Pull Request detected. Build only."
+             # Use PR number or SHA for build tag
+             IMAGE_TAG="pr-${{ github.sha }}"
+             
+          elif [ "$REF" == "dev" ]; then
+             echo "Dev branch detected."
+             DO_PUSH="true"
+             SHORT_SHA=$(git rev-parse --short HEAD)
+             IMAGE_TAG="dev-${SHORT_SHA}"
+             
+          elif [ "$REF" == "main" ] || [ "$EVENT" == "workflow_dispatch" ]; then
+             echo "Main branch or Manual Trigger detected."
+             DO_PUSH="true"
+             DO_GIT_TAG="true" 
+             
+             INPUT_VERSION="${{ inputs.version }}"
+             
+             if [ -n "$INPUT_VERSION" ]; then
+                echo "Manual version input: $INPUT_VERSION"
+                IMAGE_TAG="$INPUT_VERSION"
+             else
+                # Auto increment logic
+                LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+                
+                if [ -z "$LATEST_TAG" ]; then
+                  echo "No tags found. Defaulting to v0.0.1"
+                  IMAGE_TAG="v0.0.1"
+                else
+                  echo "Latest tag: $LATEST_TAG"
+                  VERSION_NO_V=${LATEST_TAG#v}
+                  IFS='.' read -r -a PARTS <<< "$VERSION_NO_V"
+                  
+                  # Increment patch
+                  PATCH="${PARTS[2]}"
+                  NEW_PATCH=$((PATCH + 1))
+                  IMAGE_TAG="v${PARTS[0]}.${PARTS[1]}.$NEW_PATCH"
+                  echo "Calculated version: $IMAGE_TAG"
+                fi
+             fi
+          else
+             echo "Unknown branch ($REF). Build only."
+             IMAGE_TAG="branch-${{ github.sha }}"
+          fi
+
+          echo "do_push=$DO_PUSH" >> $GITHUB_OUTPUT
+          echo "do_git_tag=$DO_GIT_TAG" >> $GITHUB_OUTPUT
+          echo "tag=$IMAGE_TAG" >> $GITHUB_OUTPUT
+          echo "Final Strategy -> Tag: $IMAGE_TAG | Push: $DO_PUSH | Git Tag: $DO_GIT_TAG"
+
+      - name: Login to Nexus
+        if: steps.strategy.outputs.do_push == 'true'
+        run: |
+          echo "${{ secrets.NEXUS_PASSWORD }}" | docker login "${{ secrets.NEXUS_URL }}" -u "${{ secrets.NEXUS_USERNAME }}" --password-stdin
+
+      - name: Build Docker Image
+        run: |
+          IMAGE_TAG="${{ steps.strategy.outputs.tag }}"
+          NEXUS_URL="${{ secrets.NEXUS_URL }}"
+          IMAGE_NAME="simple-python-api"
+
+          FULL_IMAGE_PATH="$NEXUS_URL/$IMAGE_NAME:$IMAGE_TAG"
+
+          echo "Building $FULL_IMAGE_PATH..."
+          docker build -t "$FULL_IMAGE_PATH" .
+
+      - name: Push Docker Image
+        if: steps.strategy.outputs.do_push == 'true'
+        run: |
+          IMAGE_TAG="${{ steps.strategy.outputs.tag }}"
+          NEXUS_URL="${{ secrets.NEXUS_URL }}"
+          IMAGE_NAME="simple-python-api"
+
+          FULL_IMAGE_PATH="$NEXUS_URL/$IMAGE_NAME:$IMAGE_TAG"
+
+          echo "Pushing $FULL_IMAGE_PATH..."
+          docker push "$FULL_IMAGE_PATH"
+
+      - name: Push Git Tag (Main Only)
+        if: steps.strategy.outputs.do_git_tag == 'true'
+        run: |
+          TAG="${{ steps.strategy.outputs.tag }}"
+
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          echo "Creating and pushing git tag: $TAG"
+          git tag "$TAG"
+          git push origin "$TAG"
