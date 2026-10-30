@@ -5,7 +5,7 @@ set -e
 VENV_DIR="venv"
 
 # Create virtual environment if it doesn't exist
-if [ ! -d "$VENV_DIR" ]; then
+if [[ ! -d "$VENV_DIR" ]]; then
     echo "Creating virtual environment..."
     python3 -m venv $VENV_DIR
 fi
@@ -15,7 +15,7 @@ source $VENV_DIR/bin/activate
 
 # Install dependencies
 echo "Installing dependencies..."
-pip install -r requirements.txt
+pip install --only-binary :all: -r requirements.txt
 
 # Clean previous build artifacts
 echo "Cleaning previous artifacts..."
@@ -53,7 +53,7 @@ echo "Use Ctrl+C to stop the server."
 # Trap to cleanup and restore app.py on exit
 cleanup() {
     echo "Stopping server and cleaning up..."
-    if [ -f app.py.bak ]; then
+    if [[ -f app.py.bak ]]; then
         mv app.py.bak app.py
     fi
     # Optional: remove artifacts to keep dir clean
