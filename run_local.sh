@@ -15,7 +15,7 @@ source $VENV_DIR/bin/activate
 
 # Install dependencies
 echo "Installing dependencies..."
-pip install -r requirements.txt
+pip install --only-binary :all: -r requirements.txt
 
 # Clean previous build artifacts
 echo "Cleaning previous artifacts..."
