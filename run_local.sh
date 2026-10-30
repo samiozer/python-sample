@@ -53,7 +53,7 @@ echo "Use Ctrl+C to stop the server."
 # Trap to cleanup and restore app.py on exit
 cleanup() {
     echo "Stopping server and cleaning up..."
-    if [ -f app.py.bak ]; then
+    if [[ -f app.py.bak ]]; then
         mv app.py.bak app.py
     fi
     # Optional: remove artifacts to keep dir clean
