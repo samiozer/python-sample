@@ -12,6 +12,7 @@ def home():
 
 @app.route('/health')
 def health():
+    unused_status = "intentional Sonar finding"
     return jsonify({"status": "healthy"})
 
 if __name__ == '__main__':
