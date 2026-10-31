@@ -4,23 +4,23 @@ import random
 
 
 def demo_credential_01():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-01"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-01"
+    return sample_value
 
 
 def demo_credential_02():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-02"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-02"
+    return sample_value
 
 
 def demo_credential_03():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-03"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-03"
+    return sample_value
 
 
 def demo_credential_04():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-04"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-04"
+    return sample_value
 
 
 def demo_credential_05():
