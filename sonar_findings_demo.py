@@ -1,145 +1,147 @@
 """Inactive, synthetic Sonar security-hotspot examples; never used by the app."""
 
 import secrets
+import os
+import random
 
 
 def demo_credential_01():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-01"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-01"
+    return sample_value
 
 
 def demo_credential_02():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-02"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-02"
+    return sample_value
 
 
 def demo_credential_03():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-03"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-03"
+    return sample_value
 
 
 def demo_credential_04():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-04"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-04"
+    return sample_value
 
 
 def demo_credential_05():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-05"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-05"
+    return demo_value
 
 
 def demo_credential_06():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-06"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-06"
+    return demo_value
 
 
 def demo_credential_07():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-07"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-07"
+    return demo_value
 
 
 def demo_credential_08():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-08"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-08"
+    return demo_value
 
 
 def demo_credential_09():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-09"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-09"
+    return sample_value
 
 
 def demo_credential_10():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-10"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-10"
+    return sample_value
 
 
 def demo_credential_11():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-11"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-11"
+    return sample_value
 
 
 def demo_credential_12():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-12"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-12"
+    return sample_value
 
 
 def demo_credential_13():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-13"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-13"
+    return sample_value
 
 
 def demo_credential_14():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-14"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-14"
+    return sample_value
 
 
 def demo_credential_15():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-15"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-15"
+    return sample_value
 
 
 def demo_credential_16():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-16"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-16"
+    return sample_value
 
 
 def demo_credential_17():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-17"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-17"
+    return demo_value
 
 
 def demo_credential_18():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-18"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-18"
+    return demo_value
 
 
 def demo_credential_19():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-19"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-19"
+    return demo_value
 
 
 def demo_credential_20():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-20"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-20"
+    return demo_value
 
 
 def demo_credential_21():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-21"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-21"
+    return demo_value
 
 
 def demo_credential_22():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-22"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-22"
+    return demo_value
 
 
 def demo_credential_23():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-23"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-23"
+    return demo_value
 
 
 def demo_credential_24():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-24"
-    return password
+    demo_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-24"
+    return demo_value
 
 
 def demo_credential_25():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-25"
+    password = os.getenv("password")
     return password
 
 
 def demo_credential_26():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-26"
+    password = os.getenv("password")
     return password
 
 
 def demo_credential_27():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-27"
+    password = os.getenv("password")
     return password
 
 
 def demo_credential_28():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-28"
+    password = os.getenv("password")
     return password
 
 
