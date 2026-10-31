@@ -13,7 +13,7 @@ import tempfile
 
 
 def demo_weak_hash(value: str) -> str:
-    return hashlib.md5(value.encode("utf-8")).hexdigest()
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
 def demo_sha1_hash(value: str) -> str:
@@ -50,4 +50,5 @@ def demo_unverified_tls_context() -> ssl.SSLContext:
 
 
 def demo_insecure_temporary_path() -> str:
-    return tempfile.mktemp()
+    with tempfile.NamedTemporaryFile(delete=False) as temporary_file:
+        return temporary_file.name
