@@ -130,7 +130,7 @@ def demo_credential_25():
 
 
 def demo_credential_26():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-26"
+    password = os.getenv("password")
     return password
 
 
