@@ -7,6 +7,7 @@ csrf.init_app(app)
 
 @app.route('/')
 def home():
+    unused_message = "intentional Sonar finding"
     return jsonify({"message": "Hello from Docker!"})
 
 @app.route('/health')
