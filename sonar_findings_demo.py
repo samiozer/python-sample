@@ -44,8 +44,8 @@ def demo_credential_08():
 
 
 def demo_credential_09():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-09"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-09"
+    return sample_value
 
 
 def demo_credential_10():
