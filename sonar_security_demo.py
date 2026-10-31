@@ -50,4 +50,5 @@ def demo_unverified_tls_context() -> ssl.SSLContext:
 
 
 def demo_insecure_temporary_path() -> str:
-    return tempfile.mktemp()
+    with tempfile.NamedTemporaryFile(delete=False) as temporary_file:
+        return temporary_file.name
