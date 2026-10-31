@@ -64,23 +64,23 @@ def demo_credential_12():
 
 
 def demo_credential_13():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-13"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-13"
+    return sample_value
 
 
 def demo_credential_14():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-14"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-14"
+    return sample_value
 
 
 def demo_credential_15():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-15"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-15"
+    return sample_value
 
 
 def demo_credential_16():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-16"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-16"
+    return sample_value
 
 
 def demo_credential_17():
