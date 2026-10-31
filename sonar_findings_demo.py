@@ -1,250 +1,153 @@
-"""Inactive Sonar examples; these functions are not imported by the application."""
+"""Inactive, synthetic Sonar security-hotspot examples; never used by the app."""
 
 import random
 
 
-def unused_local_01():
-    result_01 = 1
-
-
-def unused_local_02():
-    result_02 = 2
-
-
-def unused_local_03():
-    result_03 = 3
-
-
-def unused_local_04():
-    result_04 = 4
-
-
-def unused_local_05():
-    result_05 = 5
-
-
-def unused_local_06():
-    result_06 = 6
-
-
-def unused_local_07():
-    result_07 = 7
-
-
-def unused_local_08():
-    result_08 = 8
-
-
-def unused_local_09():
-    result_09 = 9
-
-
-def unused_local_10():
-    result_10 = 10
-
-
-def duplicate_literal_11():
-    return "demo notice", "demo notice", "demo notice"
-
-
-def duplicate_literal_12():
-    return "sample status", "sample status", "sample status"
-
-
-def duplicate_literal_13():
-    return "test message", "test message", "test message"
-
-
-def duplicate_literal_14():
-    return "demo response", "demo response", "demo response"
-
-
-def duplicate_literal_15():
-    return "sample label", "sample label", "sample label"
-
-
-def duplicate_literal_16():
-    return "test status", "test status", "test status"
-
-
-def duplicate_literal_17():
-    return "demo result", "demo result", "demo result"
-
-
-def duplicate_literal_18():
-    return "sample notice", "sample notice", "sample notice"
-
-
-def duplicate_literal_19():
-    return "test response", "test response", "test response"
-
-
-def duplicate_literal_20():
-    return "demo label", "demo label", "demo label"
-
-
-def redundant_boolean_21(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_22(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_23(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_24(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_25(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_26(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_27(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_28(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_29(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def redundant_boolean_30(enabled):
-    if enabled == True:
-        return True
-    return False
-
-
-def empty_collection_check_31(items):
-    return len(items) == 0
-
-
-def empty_collection_check_32(items):
-    return len(items) == 0
-
-
-def empty_collection_check_33(items):
-    return len(items) == 0
-
-
-def empty_collection_check_34(items):
-    return len(items) == 0
-
-
-def empty_collection_check_35(items):
-    return len(items) == 0
-
-
-def empty_collection_check_36(items):
-    return len(items) == 0
-
-
-def empty_collection_check_37(items):
-    return len(items) == 0
-
-
-def empty_collection_check_38(items):
-    return len(items) == 0
-
-
-def empty_collection_check_39(items):
-    return len(items) == 0
-
-
-def nested_condition_40(first, second):
-    if first:
-        if second:
-            return True
-    return False
-
-
-def nested_condition_41(first, second):
-    if first:
-        if second:
-            return True
-    return False
-
-
-def nested_condition_42(first, second):
-    if first:
-        if second:
-            return True
-    return False
-
-
-def nested_condition_43(first, second):
-    if first:
-        if second:
-            return True
-    return False
-
-
-def nested_condition_44(first, second):
-    if first:
-        if second:
-            return True
-    return False
-
-
-def broad_exception_45():
-    try:
-        return 1 / 0
-    except Exception:
-        return None
-
-
-def broad_exception_46():
-    try:
-        return int("demo")
-    except Exception:
-        return None
-
-
-def broad_exception_47():
-    try:
-        return {}["missing"]
-    except Exception:
-        return None
-
-
-def mutable_default_48(items=[]):
-    items.append("demo")
-    return items
-
-
-def hotspot_demo_credential_49():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL"
+def demo_credential_01():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-01"
     return password
 
 
-def hotspot_non_security_random_50():
+def demo_credential_02():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-02"
+    return password
+
+
+def demo_credential_03():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-03"
+    return password
+
+
+def demo_credential_04():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-04"
+    return password
+
+
+def demo_credential_05():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-05"
+    return password
+
+
+def demo_credential_06():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-06"
+    return password
+
+
+def demo_credential_07():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-07"
+    return password
+
+
+def demo_credential_08():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-08"
+    return password
+
+
+def demo_credential_09():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-09"
+    return password
+
+
+def demo_credential_10():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-10"
+    return password
+
+
+def demo_credential_11():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-11"
+    return password
+
+
+def demo_credential_12():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-12"
+    return password
+
+
+def demo_credential_13():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-13"
+    return password
+
+
+def demo_credential_14():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-14"
+    return password
+
+
+def demo_credential_15():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-15"
+    return password
+
+
+def demo_credential_16():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-16"
+    return password
+
+
+def demo_credential_17():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-17"
+    return password
+
+
+def demo_credential_18():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-18"
+    return password
+
+
+def demo_credential_19():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-19"
+    return password
+
+
+def demo_credential_20():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-20"
+    return password
+
+
+def demo_credential_21():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-21"
+    return password
+
+
+def demo_credential_22():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-22"
+    return password
+
+
+def demo_credential_23():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-23"
+    return password
+
+
+def demo_credential_24():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-24"
+    return password
+
+
+def demo_credential_25():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-25"
+    return password
+
+
+def demo_credential_26():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-26"
+    return password
+
+
+def demo_credential_27():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-27"
+    return password
+
+
+def demo_credential_28():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-28"
+    return password
+
+
+def demo_credential_29():
+    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-29"
+    return password
+
+
+def demo_non_security_sample_id():
     """Generate a sample ID only; never use this for authentication or secrets."""
     return random.randint(1, 1000)
