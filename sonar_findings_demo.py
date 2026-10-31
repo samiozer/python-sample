@@ -1,6 +1,6 @@
 """Inactive, synthetic Sonar security-hotspot examples; never used by the app."""
 
-import random
+import secrets
 
 
 def demo_credential_01():
@@ -150,4 +150,4 @@ def demo_credential_29():
 
 def demo_non_security_sample_id():
     """Generate a sample ID only; never use this for authentication or secrets."""
-    return random.randint(1, 1000)
+    return secrets.randbelow(1000) + 1
