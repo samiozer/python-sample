@@ -4,8 +4,8 @@ import random
 
 
 def demo_credential_01():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-01"
-    return password
+    sample_value = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-01"
+    return sample_value
 
 
 def demo_credential_02():
