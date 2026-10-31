@@ -1,5 +1,6 @@
 """Inactive, synthetic Sonar security-hotspot examples; never used by the app."""
 
+import os
 import random
 
 
@@ -124,22 +125,22 @@ def demo_credential_24():
 
 
 def demo_credential_25():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-25"
+    password = os.getenv("password")
     return password
 
 
 def demo_credential_26():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-26"
+    password = os.getenv("password")
     return password
 
 
 def demo_credential_27():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-27"
+    password = os.getenv("password")
     return password
 
 
 def demo_credential_28():
-    password = "DEMO-ONLY-NOT-A-REAL-CREDENTIAL-28"
+    password = os.getenv("password")
     return password
 
 
