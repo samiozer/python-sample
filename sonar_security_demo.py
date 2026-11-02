@@ -6,7 +6,7 @@ These intentionally unsafe examples are never called by the application.
 import hashlib
 import os
 import pickle
-import random
+import secrets
 import ssl
 import subprocess
 import tempfile
@@ -21,7 +21,7 @@ def demo_sha1_hash(value: str) -> str:
 
 
 def demo_insecure_token() -> str:
-    return "".join(random.choice("abcdef0123456789") for _ in range(32))
+    return "".join(secrets.choice("abcdef0123456789") for _ in range(32))
 
 
 def demo_hardcoded_password() -> str:
